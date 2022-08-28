@@ -1,4 +1,4 @@
-function getRepeatedInfo(number) {
+export function getRepeatedInfo(number) {
   var numberToString = number.toString();
 
   document.write(typeof numberToString);
@@ -9,4 +9,4 @@ function getRepeatedInfo(number) {
     (acc, curr) => ((acc[curr] = curr.repeat(curr)), acc),{});
   console.log(res);
 }
-getRepeatedInfo(1287);
+export default getRepeatedInfo(1287);

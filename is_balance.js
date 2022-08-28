@@ -1,6 +1,6 @@
 
 //filename : is-balance.js
-function isBalance(expr)
+export function isBalance(expr)
 {
       
   
@@ -53,10 +53,4 @@ function isBalance(expr)
 let expr = "([{}])";
   
 
-if (isBalance(expr))
-     document.write("Balanced ");
-else
-    document.write("Not Balanced ");
-  
-
-  
+export default isBalance(expr);

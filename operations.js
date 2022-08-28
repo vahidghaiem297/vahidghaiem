@@ -2,12 +2,12 @@
 
 var ops = "-2 5 D + R";
 var arr = [];
-function operations(){
+export function operations(){
     var numbers = ops.slice(0,2);
     var lastChar = numbers[numbers.length - 1]; 
    ops = ops.split(" ");
    for ( var i = 0; i < ops.length; i++) {
-    if (!isNaN(ops[i]) && ops[i].includes('D')) {
+    if (!isNaN(ops[i])) {
         arr.push(ops[i]);
     }
     if (ops[i] === "D") {
@@ -16,28 +16,27 @@ function operations(){
       lastChar = lastChar * 2;
       arr.push(lastChar);
     }
-   if (ops[i] === '+') {
-       
-        var lastChar = numbers[numbers.length - 1];
-         var sum = parseInt(arr[2]) + parseInt(arr[1]);
-       arr.push(sum);
-    }
-   if (ops[i] === 'R') {
-       
-        var lastChar = numbers[numbers.length - 1];
-       arr.pop();
-    }
-
-    
-
+    if (ops[i] === "+") {
+    var sum = parseInt(arr[1]) + parseInt(arr[2]);
+    arr.push(sum);
+  }
    
+  if (ops[i] === "R") {
+    arr.pop();
+  }
    }
   
-  
+  var total = 0
+  for (var i = 0; i < arr.length; i++) {
+   total += parseInt(arr[i]);
+
+  }
+  arr = [];
+  arr.push(total);
    console.log(ops); 
-   console.log(lastChar); 
-   console.log(arr.length); 
+   console.log(arr); 
+
    }
 
 
-operations();
+   export default operations();

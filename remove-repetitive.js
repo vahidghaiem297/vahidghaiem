@@ -1,8 +1,8 @@
 //file-name : remove-repetitive.js
-function removeRepetitive(element){
+export function removeRepetitive(element){
   
     var element = element.split("");
     return element.filter((item, index)=> element.indexOf(item) === index);
 
 }
-console.log(removeRepetitive('fdfsffgsfgf'));
+export default removeRepetitive('fdfsffgsfgf');
